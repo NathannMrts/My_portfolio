@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Martins - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark-color);
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .about-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .project-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .experience-item {
+            border-left: 2px solid var(--primary-color);
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            left: -7px;
+            top: 5px;
+        }
+        
+        .social-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .social-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon i {
+            font-size: 3rem;
+        }
+        
+        .social-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .social-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-color);
+            color: var(--dark-color);
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nathan Martins</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Expérience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#social">Réseaux</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Nathan Martins</h1>
+                    <h2 class="mb-4">Développeur Systèmes Numériques</h2>
+                    <p class="lead mb-4">Je suis un jeune diplômé passionné par l'innovation technologique et la résolution de problèmes complexes.</p>
+                    <div class="d-flex flex-wrap">
+                        <a href="#social" class="btn btn-light btn-lg me-3 mb-3">Me contacter</a>
+                        <a href="CV_NATHAN_MARTINS" class="btn btn-outline-light btn-lg mb-3" id="downloadCV">Télécharger mon CV</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="img-fluid rounded-circle" alt="Nathan Martins">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-content">
+                        <div class="row">
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Nathan Martins">
+                            </div>
+                            <div class="col-md-8">
+                                <p>Je suis un jeune diplômé d'un Bac Pro Systèmes Numériques, avec une forte capacité à travailler de manière autonome et une curiosité naturelle pour l'innovation.</p>
+                                <p>Je suis motivé par l'apprentissage continu et je m'adapte facilement à de nouveaux environnements. Mon parcours m'a permis de développer des compétences techniques solides ainsi qu'un sens aigu du professionnalisme.</p>
+                                <div class="row mt-4">
+                                    <div class="col-sm-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><strong>Nom :</strong> Nathan Martins</li>
+                                            <li class="mb-2"><strong>Téléphone :</strong> 06.65.16.72.45</li>
+                                            <li class="mb-2"><strong>Ville :</strong> Chabottes 05260</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><strong>Diplôme :</strong> Bac Pro Systèmes Numériques</li>
+                                            <li class="mb-2"><strong>Email :</strong> naturrts.pro@gmail.com</li>
+                                            <li class="mb-2"><strong>Disponibilité :</strong> Immédiate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Mes compétences</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Professionnalisme</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%; background-color: var(--primary-color);" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Autonomie</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: var(--primary-color);" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Travail d'équipe</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 88%; background-color: var(--primary-color);" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Réparation PC</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: var(--primary-color);" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Montage PC</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 82%; background-color: var(--primary-color);" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span class="skill-name">Installation</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: var(--primary-color);" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes projets</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="project-img card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">NLJ PC - Réparation</h5>
+                            <p class="card-text">Stage de réparation et montage de PC avec diverses missions techniques.</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="project-img card-img-top" alt="Projet 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Planète Champsaur</h5>
+                            <p class="card-text">Mission d'informatique, photo & vidéo et gestion de sites web.</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                                Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1554679668-f3d86d95802e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="project-img card-img-top" alt="Projet 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Les Estèves</h5>
+                            <p class="card-text">Travaux temporaires en cuisine, pâtisserie et services.</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">
+                                Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Mon parcours</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Formation</h4>
+                    
+                    <div class="experience-item">
+                        <h5>Bac Pro Systèmes Numériques</h5>
+                        <p class="text-primary">Lycée professionnel Pierre et Louis Poutrain | 2022-2025</p>
+                        <p>Option ARED : Audiovisuels, Réseau et Équipements Domestiques</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h5>3ème Prépa Métiers</h5>
+                        <p class="text-primary">Lycée professionnel Pierre et Louis Poutrain | 2021-2022</p>
+                        <p>Multiples stages : Cuisine, Menuiserie, Électricité</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Expérience professionnelle</h4>
+                    
+                    <div class="experience-item">
+                        <h5>Stagiaire - NLJ PC</h5>
+                        <p class="text-primary">2023 & 2024 | Novembre-Décembre, Mai-Juin</p>
+                        <p>Réparation PC, montage PC, installation</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h5>Stagiaire - Planète Champsaur</h5>
+                        <p class="text-primary">2024 | Novembre-Décembre</p>
+                        <p>Informatique, photo & vidéo, sites web (Hostinger)</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h5>Travaux temporaires - Les Estèves</h5>
+                        <p class="text-primary">2022-2023 | Novembre-Décembre</p>
+                        <p>Cuisine, pâtisserie, services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" class="social-section">
+        <div class="container">
+            <h2 class="text-center text-white mb-5">Retrouvez-moi sur les réseaux</h2>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <h4 class="mt-3 text-white">Téléphone</h4>
+                        <p>06.65.16.72.45</p>
+                        <a href="tel:0665167245" class="btn btn-outline-light mt-2">Appeler</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <h4 class="mt-3 text-white">Instagram</h4>
+                        <p>@nathan.martins_</p>
+                        <a href="https://www.instagram.com/" target="_blank" class="btn btn-outline-light mt-2">Me suivre</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-snapchat"></i>
+                        </div>
+                        <h4 class="mt-3 text-white">Snapchat</h4>
+                        <p>@nathan.m</p>
+                        <a href="https://www.snapchat.com/" target="_blank" class="btn btn-outline-light mt-2">Ajouter</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-tiktok"></i>
+                        </div>
+                        <h4 class="mt-3 text-white">TikTok</h4>
+                        <p>@tiktok</p>
+                        <a href="https://www.tiktok.com/" target="_blank" class="btn btn-outline-light mt-2">Me suivre</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p class="mb-1">N'hésitez pas à me contacter via l'une de ces plateformes !</p>
+                <p>Je réponds généralement très rapidement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Nathan Martins</h3>
+                    <p>Développeur Systèmes Numériques passionné par l'innovation technologique.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links mb-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/nathan.mrts_/?igsh=dWxpNnhmd3Ewdm8z&utm_source=querySelectorAll"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <p>06.65.16.72.45</p>
+                    <p>natmrts.pro@gmail.com</p>
+                    <p>Rte des écrins, Chabottes 05260</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p>&copy; 2023 Nathan Martins. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Project Modals -->
+    <!-- Project 1 Modal -->
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project1ModalLabel">NLJ PC - Réparation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded mb-4" alt="Projet 1">
+                    <h5>Description du projet</h5>
+                    <p>Stage effectué chez NLJ PC en 2023 et 2024 durant les mois de novembre-décembre et mai-juin. Missions principales axées sur la réparation et le montage de PC, ainsi que l'installation de systèmes d'exploitation et de logiciels.</p>
+                    <h5>Technologies utilisées</h5>
+                    <ul>
+                        <li>Diagnostic matériel</li>
+                        <li>Assemblage PC</li>
+                        <li>Installation Windows/Linux</li>
+                        <li>Résolution de problèmes techniques</li>
+                    </ul>
+                    <h5>Période</h5>
+                    <p>Novembre-Décembre 2023 | Mai-Juin 2024</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project2ModalLabel">Planète Champsaur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded mb-4" alt="Projet 2">
+                    <h5>Description du projet</h5>
+                    <p>Stage chez Planète Champsaur en novembre-décembre 2024. Missions variées incluant la gestion informatique, la production de contenu photo et vidéo, ainsi que la gestion de sites web via la plateforme Hostinger.</p>
+                    <h5>Technologies utilisées</h5>
+                    <ul>
+                        <li>Gestion de sites web (Hostinger)</li>
+                        <li>Photographie et vidéo</li>
+                        <li>Montage photo (Adobe Photoshop)</li>
+                        <li>Montage vidéo (Adobe Premiere)</li>
+                    </ul>
+                    <h5>Période</h5>
+                    <p>Novembre-Décembre 2024</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 Modal -->
+    <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project3ModalLabel">Les Estèves</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1554679668-f3d86d95802e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded mb-4" alt="Projet 3">
+                    <h5>Description du projet</h5>
+                    <p>Travaux temporaires aux Estèves en novembre-décembre 2022-2023. Expérience dans les domaines de la cuisine, pâtisserie et services, démontrant une adaptabilité à différents environnements professionnels.</p>
+                    <h5>Compétences développées</h5>
+                    <ul>
+                        <li>Travail en équipe en milieu professionnel</li>
+                        <li>Gestion du temps et des priorités</li>
+                        <li>Adaptabilité à différents postes</li>
+                        <li>Relation client</li>
+                    </ul>
+                    <h5>Période</h5>
+                    <p>Novembre-Décembre 2022-2023</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // CV Download
+        document.getElementById('downloadCV').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a temporary link to trigger download
+            const link = document.createElement('a');
+            link.href = 'CV_NATHAN_MARTINS.pdf'; // This would be your actual CV file
+            link.download = 'CV_Nathan_Martins.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.section, .project-card, .experience-item, .social-card');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                if(position.top < window.innerHeight - 100) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
