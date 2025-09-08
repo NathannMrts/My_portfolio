@@ -531,6 +531,7 @@
             opacity: 0.8;
             font-size: 0.9rem;
             margin-bottom: 10px;
+            display: block;
         }
         
         .download-btn {
@@ -541,11 +542,14 @@
             border-radius: 20px;
             font-weight: 500;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+            color: white;
         }
         
         .quick-access-btn {
@@ -626,6 +630,24 @@
             padding-bottom: 10px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
+        
+        /* Style pour le bouton CV corrigé */
+        .cv-download-btn {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        
+        .cv-download-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -679,7 +701,7 @@
                     <p class="lead mb-4">Je suis un jeune diplômé passionné par l'innovation technologique et la résolution de problèmes complexes.</p>
                     <div class="d-flex flex-wrap">
                         <a href="#social" class="btn btn-light btn-lg me-3 mb-3">Me contacter</a>
-                        <a href="#" class="btn btn-outline-light btn-lg mb-3" id="downloadCV">Télécharger mon CV</a>
+                        <a href="CV_NATHAN_MARTINS.pdf" download="CV_Nathan_Martins.pdf" class="btn btn-outline-light btn-lg mb-3" id="downloadCV">Télécharger mon CV</a>
                     </div>
                 </div>
                 <div class="col-lg-4 d-none d-lg-block">
@@ -911,80 +933,219 @@
                         </div>
                     </div>
                 </div>
-    </section>
-
-    <!-- Parcours Section -->
-    <section id="parcours" class="section">
-        <div class="container">
-            <h2 class="section-title">Mon parcours</h2>
-            
-            <div class="timeline">
-                <!-- Bac Pro -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2021-2023</span>
-                        <div class="icon-container">
-                            <i class="bi bi-mortarboard"></i>
-                        </div>
-                        <h3>Bac Pro Systèmes Numériques</h3>
-                        <p>Option A : Sûreté et sécurité des infrastructures, de l'habitat et du tertiaire</p>
-                        <p><a href="https://www.lycee-pierre-mendès-france.net/" class="school-link" target="_blank">Lycée Pierre Mendès France - Gap</a></p>
-                        <span class="badge">Réseaux IP</span>
-                        <span class="badge">Électronique</span>
-                        <span class="badge">Sécurité</span>
-                    </div>
-                </div>
-                
-                <!-- Stage NLJ PC -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2023</span>
-                        <div class="icon-container">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
-                        <h3>Stage - NLJ PC</h3>
-                        <p>Réparation et montage de PC</p>
-                        <p>Dépannage informatique, installation de systèmes d'exploitation, assemblage d'ordinateurs</p>
-                        <span class="badge">Hardware</span>
-                        <span class="badge">Software</span>
-                        <span class="badge">Réseau</span>
-                    </div>
-                </div>
-                
-                <!-- Stage Planète Champsaur -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2022</span>
-                        <div class="icon-container">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
-                        <h3>Stage - Planète Champsaur</h3>
-                        <p>Informatique, photo & vidéo, gestion de sites web</p>
-                        <p>Maintenance informatique, création de contenu multimédia, assistance technique</p>
-                        <span class="badge">Web</span>
-                        <span class="badge">Multimédia</span>
-                        <span class="badge">Maintenance</span>
-                    </div>
-                </div>
-                
-                <!-- Brevet -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2019-2021</span>
-                        <div class="icon-container">
-                            <i class="bi bi-mortarboard"></i>
-                        </div>
-                        <h3>Brevet des collèges</h3>
-                        <p>Mention Bien</p>
-                        <p><a href="https://clg-chabrières.ac-aix-marseille.fr/spip/" class="school-link" target="_blank">Collège Chabrières - Gap</a></p>
-                        <span class="badge">Général</span>
-                        <span class="badge">Technologique</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
+ <style>
+    /* Styles pour la nouvelle section Parcours */
+    .parcours-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .parcours-item {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .parcours-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .parcours-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    }
+
+    .parcours-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .parcours-title {
+        color: var(--secondary-color);
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 0;
+        flex: 1;
+    }
+
+    .parcours-year {
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-left: 15px;
+    }
+
+    .parcours-school {
+        color: var(--light-color);
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .parcours-school::before {
+        content: '🏫';
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .parcours-details {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+        line-height: 1.6;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .parcours-details::before {
+        content: '📝';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .parcours-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .parcours-badge {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--light-color);
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+    }
+
+    .parcours-badge:hover {
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        transform: translateY(-2px);
+    }
+
+    /* Animation pour l'apparition des éléments */
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .parcours-item {
+        animation: slideInFromRight 0.6s ease forwards;
+    }
+
+    .parcours-item:nth-child(1) { animation-delay: 0.1s; }
+    .parcours-item:nth-child(2) { animation-delay: 0.2s; }
+    .parcours-item:nth-child(3) { animation-delay: 0.3s; }
+    .parcours-item:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .parcours-header {
+            flex-direction: column;
+        }
+        
+        .parcours-year {
+            margin-left: 0;
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+        
+        .parcours-title {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+<!-- Parcours Section -->
+<section id="parcours" class="section">
+    <div class="container">
+        <h2 class="section-title">MON PARCOURS</h2>
+        
+        <div class="parcours-container">
+            <!-- BTS SIO -->
+            <div class="parcours-item">
+                <div class="parcours-header">
+                    <h3 class="parcours-title">BTS SIO</h3>
+                    <span class="parcours-year">2023-2025</span>
+                </div>
+                <div class="parcours-school">Lycée Dominique Villard - Gap</div>
+                <div class="parcours-details">Services Informatiques aux Organisations - SIO </div>
+                <div class="parcours-badges">
+                    <span class="parcours-badge">Développement</span>
+                    <span class="parcours-badge">Réseaux</span>
+                    <span class="parcours-badge">Cybersécurité</span>
+                    <span class="parcours-badge">Gestion de projet</span>
+                </div>
+            </div>
+            
+            <!-- Bac Pro SN -->
+            <div class="parcours-item">
+                <div class="parcours-header">
+                    <h3 class="parcours-title">Bac Pro Systèmes Numériques</h3>
+                    <span class="parcours-year">2020-2023</span>
+                </div>
+                <div class="parcours-school">Lycée Poutrain - Saint-Jean-Saint-Nicolas</div>
+                <div class="parcours-details">Option ARED- Mention Assez Bien </div>
+                <div class="parcours-badges">
+                    <span class="parcours-badge">Réseaux IP</span>
+                    <span class="parcours-badge">Électronique</span>
+                    <span class="parcours-badge">Sécurité</span>
+                    <span class="parcours-badge">Maintenance</span>
+                </div>
+            </div>
+            
+            <!-- Seconde -->
+            <div class="parcours-item">
+                <div class="parcours-header">
+                    <h3 class="parcours-title">3ème prépa métier</h3>
+                    <span class="parcours-year">2019-2020</span>
+                </div>
+                <div class="parcours-school">Lycée Poutrain - Saint-Jean-Saint-Nicolas</div>
+                <div class="parcours-details">Découverte des enseignements technologiques</div>
+                <div class="parcours-badges">
+                    <span class="parcours-badge">Informatique</span>
+                    <span class="parcours-badge">Sciences</span>
+                    <span class="parcours-badge">Anglais</span>
+                </div>
+            </div>
+            
+           
     <!-- Comptes Rendus Section -->
     <section id="comptes-rendus" class="section">
         <div class="container">
@@ -998,21 +1159,21 @@
                         
                         <div class="report-item">
                             <div class="report-title">Configuration d'un pare-feu</div>
-                            <div class="report-date">15 mai 2023</div>
+                            <span class="report-date">15 mai 2023</span>
                             <p>Mise en place et configuration d'un pare-feu pour sécuriser un réseau d'entreprise.</p>
-                            <a href="CV_NATHAN_MARTINS.pdf" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
+                            <a href="CV_NATHAN_MARTINS.pdf" download="Configuration_pare_feu_Nathan_Martins.pdf" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
                         
                         <div class="report-item">
                             <div class="report-title">Virtualisation de serveurs</div>
-                            <div class="report-date">2 avril 2023</div>
+                            <span class="report-date">2 avril 2023</span>
                             <p>Implémentation d'une solution de virtualisation avec VMware pour optimiser les ressources.</p>
                             <a href="#" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
                         
                         <div class="report-item">
                             <div class="report-title">Configuration NAS Synology</div>
-                            <div class="report-date">18 mars 2023</div>
+                            <span class="report-date">18 mars 2023</span>
                             <p>Installation et configuration d'un serveur NAS Synology pour le stockage en réseau.</p>
                             <a href="#" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
@@ -1024,22 +1185,22 @@
                         
                         <div class="report-item">
                             <div class="report-title">Compte rendu de TP - Programmation par blocs</div>
-                            <div class="report-date">02 septemnbre 2025</div>
+                            <span class="report-date">02 septembre 2025</span>
                             <p>Création d'une application web responsive avec HTML, CSS et JavaScript.</p>
-                            <a href="Compte rendu de TP - Programmation par blocs.pdf" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
+                            <a href="Compte rendu de TP - Programmation par blocs.pdf" download="Programmation_par_blocs_Nathan_Martins.pdf" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
                         
                         <div class="report-item">
-                            <div class="report-title">à venir</div>
-                            <div class="report-date"></div>
-                            <p>.</p>
+                            <div class="report-title">À venir</div>
+                            <span class="report-date"></span>
+                            <p>Prochain compte rendu à venir.</p>
                             <a href="#" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
                         
                         <div class="report-item">
-                            <div class="report-title">à venir</div>
-                            <div class="report-date"></div>
-                            <p></p>
+                            <div class="report-title">À venir</div>
+                            <span class="report-date"></span>
+                            <p>Prochain compte rendu à venir.</p>
                             <a href="#" class="download-btn"><i class="bi bi-download me-1"></i> Télécharger</a>
                         </div>
                     </div>
@@ -1152,13 +1313,6 @@
         
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // CV Download button
-        document.getElementById('downloadCV').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Téléchargement du CV en cours...');
-            // Ici vous pouvez ajouter le lien réel de téléchargement
         });
         
         // Animation on scroll
