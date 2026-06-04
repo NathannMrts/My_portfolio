@@ -602,6 +602,177 @@
         .parcours-item:nth-child(1) { animation-delay: 0.1s; }
         .parcours-item:nth-child(2) { animation-delay: 0.2s; }
         .parcours-item:nth-child(3) { animation-delay: 0.3s; }
+
+        /* ------------------------------------------------ */
+        /* SECTION STAGE */
+        /* ------------------------------------------------ */
+
+        .stage-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .stage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .stage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .stage-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .stage-period {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 15px;
+            white-space: nowrap;
+        }
+
+        .stage-company {
+            color: var(--light-color);
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stage-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .stage-missions {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .stage-missions li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5px 0 5px 25px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stage-missions li:last-child {
+            border-bottom: none;
+        }
+
+        .stage-missions li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        .stage-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .stage-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .stage-badge:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: translateY(-2px);
+        }
+
+        .stage-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255,255,255,0.4);
+            font-style: italic;
+        }
+
+        .stage-empty i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stage-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .stage-rapports {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stage-rapports-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .stage-rapports .list-group-item {
+            background: transparent;
+            color: var(--light-color);
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 10px 5px;
+        }
+
+        .stage-rapports .list-group-item:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
@@ -624,6 +795,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#parcours">Mon Parcours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stage">Stage</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#comptes-rendus">Comptes Rendus</a>
@@ -904,6 +1078,212 @@
                         <span class="parcours-badge">Anglais</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes Stages</h2>
+
+            <!-- ========== STAGES BTS SIO ========== -->
+            <div class="stage-category-title">
+                <i class="bi bi-mortarboard-fill me-2"></i> Stages BTS SIO
+            </div>
+
+            <div class="accordion custom-accordion mb-4" id="accordionStageBTS">
+
+                <!-- Stage BTS SIO 1 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingStageBTS1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStageBTS1" aria-expanded="false">
+                            <i class="bi bi-building me-2"></i>
+                            <span>Stage BTS SIO n°1 — <small class="ms-2 opacity-75">Entreprise à compléter · Période à compléter</small></span>
+                        </button>
+                    </h2>
+                    <div id="collapseStageBTS1" class="accordion-collapse collapse" aria-labelledby="headingStageBTS1" data-bs-parent="#accordionStageBTS">
+                        <div class="accordion-body">
+                            <div class="stage-card" style="margin-bottom: 0;">
+                                <div class="stage-header">
+                                    <h3 class="stage-title">Entreprise à compléter</h3>
+                                    <span class="stage-period">📅 Période à compléter</span>
+                                </div>
+                                <div class="stage-company">
+                                    <i class="bi bi-geo-alt-fill" style="color: var(--secondary-color)"></i>
+                                    Lieu à compléter
+                                </div>
+                                <p class="stage-description">Description du stage à compléter.</p>
+                                <ul class="stage-missions">
+                                    <li>Mission 1 à compléter</li>
+                                    <li>Mission 2 à compléter</li>
+                                </ul>
+                                <div class="stage-badges">
+                                    <span class="stage-badge">Compétence 1</span>
+                                    <span class="stage-badge">Compétence 2</span>
+                                </div>
+
+                                <!-- Rapports hebdomadaires -->
+                                <div class="stage-rapports">
+                                    <h5 class="stage-rapports-title"><i class="bi bi-file-earmark-text me-2"></i>Rapports de stage</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 1
+                                            <a href="rapport-stage-bts1-s1.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 2
+                                            <a href="rapport-stage-bts1-s2.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 3
+                                            <a href="rapport-stage-bts1-s3.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <!-- Ajouter d'autres semaines ici -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage BTS SIO 2 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingStageBTS2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStageBTS2" aria-expanded="false">
+                            <i class="bi bi-building me-2"></i>
+                            <span>Stage BTS SIO n°2 — <small class="ms-2 opacity-75">Entreprise à compléter · Période à compléter</small></span>
+                        </button>
+                    </h2>
+                    <div id="collapseStageBTS2" class="accordion-collapse collapse" aria-labelledby="headingStageBTS2" data-bs-parent="#accordionStageBTS">
+                        <div class="accordion-body">
+                            <div class="stage-card" style="margin-bottom: 0;">
+                                <div class="stage-header">
+                                    <h3 class="stage-title">Entreprise à compléter</h3>
+                                    <span class="stage-period">📅 Période à compléter</span>
+                                </div>
+                                <div class="stage-company">
+                                    <i class="bi bi-geo-alt-fill" style="color: var(--secondary-color)"></i>
+                                    Lieu à compléter
+                                </div>
+                                <p class="stage-description">Description du stage à compléter.</p>
+                                <ul class="stage-missions">
+                                    <li>Mission 1 à compléter</li>
+                                    <li>Mission 2 à compléter</li>
+                                </ul>
+                                <div class="stage-badges">
+                                    <span class="stage-badge">Compétence 1</span>
+                                    <span class="stage-badge">Compétence 2</span>
+                                </div>
+
+                                <!-- Rapports hebdomadaires -->
+                                <div class="stage-rapports">
+                                    <h5 class="stage-rapports-title"><i class="bi bi-file-earmark-text me-2"></i>Rapports de stage</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 1
+                                            <a href="rapport-stage-bts2-s1.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 2
+                                            <a href="rapport-stage-bts2-s2.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Rapport – Semaine 3
+                                            <a href="rapport-stage-bts2-s3.pdf" class="download-btn">PDF</a>
+                                        </li>
+                                        <!-- Ajouter d'autres semaines ici -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ========== ANCIENS STAGES ========== -->
+            <div class="stage-category-title" style="border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">
+                <i class="bi bi-clock-history me-2"></i> Anciens stages (avant BTS)
+            </div>
+
+            <div class="accordion custom-accordion" id="accordionStageAncien">
+
+                <!-- NLJ PC -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingStageNLJ">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStageNLJ" aria-expanded="false">
+                            <i class="bi bi-tools me-2"></i>
+                            <span>NLJ PC – Réparation & Maintenance <small class="ms-2 opacity-75">· Bac Pro</small></span>
+                        </button>
+                    </h2>
+                    <div id="collapseStageNLJ" class="accordion-collapse collapse" aria-labelledby="headingStageNLJ" data-bs-parent="#accordionStageAncien">
+                        <div class="accordion-body">
+                            <div class="stage-card" style="margin-bottom: 0;">
+                                <div class="stage-header">
+                                    <h3 class="stage-title">🏢 NLJ PC – Réparation & Maintenance</h3>
+                                    <span class="stage-period">📅 À compléter</span>
+                                </div>
+                                <div class="stage-company">
+                                    <i class="bi bi-geo-alt-fill" style="color: var(--secondary-color)"></i>
+                                    NLJ PC — Hautes-Alpes
+                                </div>
+                                <p class="stage-description">Stage effectué dans une entreprise spécialisée en réparation, maintenance et assemblage de matériel informatique.</p>
+                                <ul class="stage-missions">
+                                    <li>Diagnostic et réparation de PC fixes et portables</li>
+                                    <li>Assemblage de configurations personnalisées</li>
+                                    <li>Installation et configuration de systèmes d'exploitation (Windows / Linux)</li>
+                                    <li>Relation client et conseil technique</li>
+                                </ul>
+                                <div class="stage-badges">
+                                    <span class="stage-badge">Hardware</span>
+                                    <span class="stage-badge">Réparation</span>
+                                    <span class="stage-badge">Windows</span>
+                                    <span class="stage-badge">Linux</span>
+                                    <span class="stage-badge">Relation client</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Planète Champsaur -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingStagePlanete">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStagePlanete" aria-expanded="false">
+                            <i class="bi bi-camera-video me-2"></i>
+                            <span>Planète Champsaur – Informatique & Médias <small class="ms-2 opacity-75">· Bac Pro</small></span>
+                        </button>
+                    </h2>
+                    <div id="collapseStagePlanete" class="accordion-collapse collapse" aria-labelledby="headingStagePlanete" data-bs-parent="#accordionStageAncien">
+                        <div class="accordion-body">
+                            <div class="stage-card" style="margin-bottom: 0;">
+                                <div class="stage-header">
+                                    <h3 class="stage-title">📡 Planète Champsaur – Informatique & Médias</h3>
+                                    <span class="stage-period">📅 À compléter</span>
+                                </div>
+                                <div class="stage-company">
+                                    <i class="bi bi-geo-alt-fill" style="color: var(--secondary-color)"></i>
+                                    Planète Champsaur — Hautes-Alpes
+                                </div>
+                                <p class="stage-description">Stage polyvalent combinant des missions informatiques, photographiques, vidéo et de gestion de sites web.</p>
+                                <ul class="stage-missions">
+                                    <li>Maintenance et mise à jour de sites web</li>
+                                    <li>Prise de vue photo et montage vidéo</li>
+                                    <li>Gestion et publication de contenu numérique</li>
+                                    <li>Support informatique interne</li>
+                                </ul>
+                                <div class="stage-badges">
+                                    <span class="stage-badge">Web</span>
+                                    <span class="stage-badge">Photographie</span>
+                                    <span class="stage-badge">Vidéo</span>
+                                    <span class="stage-badge">CMS</span>
+                                    <span class="stage-badge">Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1247,6 +1627,7 @@
                         <li><a href="#about" class="text-white text-decoration-none">À propos</a></li>
                         <li><a href="#skills" class="text-white text-decoration-none">Compétences</a></li>
                         <li><a href="#comptes-rendus" class="text-white text-decoration-none">Comptes rendus</a></li>
+                        <li><a href="#stage" class="text-white text-decoration-none">Stage</a></li>
                         <li><a href="#social" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
