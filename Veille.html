@@ -71,6 +71,18 @@
       width: fit-content;
       font-weight: bold;
     }
+    .new-badge {
+      font-size: 0.7rem;
+      background: #ff5e78;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      display: inline-block;
+      width: fit-content;
+      font-weight: bold;
+      vertical-align: middle;
+    }
     .btn-veille {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       border: none;
@@ -90,6 +102,40 @@
       filter: brightness(1.2);
     }
     section { padding: 60px 0; }
+    .meta-section {
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .meta-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 100%;
+    }
+    .meta-card h5 {
+      color: #8f94fb;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .meta-card ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+    .meta-card li {
+      margin-bottom: 8px;
+      color: #cfcfe6;
+    }
+    .tag-pill {
+      display: inline-block;
+      background: rgba(143, 148, 251, 0.15);
+      border: 1px solid rgba(143, 148, 251, 0.4);
+      color: #c7caff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin: 3px;
+    }
   </style>
 </head>
 <body>
@@ -98,12 +144,229 @@
     <div class="container">
       <h1 class="display-4 fw-bold">Veille Technologique</h1>
       <p class="lead">Accès direct aux sources et analyses GPU</p>
+      <p class="small mb-0" style="opacity:0.85;">Flux trié par date (du plus récent au plus ancien) — septembre 2025 à septembre 2026</p>
     </div>
   </header>
 
   <main class="container py-5">
     <h2 class="section-title">Flux de veille mis à jour</h2>
     <div class="row">
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">03/09/2026</span>
+          <h4>Bien choisir sa carte graphique en 2026<span class="new-badge">NOUVEAU</span></h4>
+          <p>Un dossier complet passe en revue les gammes NVIDIA, AMD et Intel pour PC fixe et portable, avec un focus sur les technologies d'upscaling par IA (DLSS, FSR, XeSS).</p>
+          <a href="https://www.cowcotland.com/articles/5069/carte-graphique-bien-choisir-en-2026-sur-pc-fixe-comme-sur-pc-portable.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">02/09/2026</span>
+          <h4>+15 % en un mois : la RTX 5090 explose<span class="new-badge">NOUVEAU</span></h4>
+          <p>Une nouvelle hausse mensuelle pousse la RTX 5090 vers des tarifs jugés totalement déraisonnables, certains modèles dépassant les 4 800 € en France.</p>
+          <a href="https://www.cowcotland.com/news/102254/prix-des-cartes-graphiques-+-15-en-un-mois-la-rtx-5090-atteint-desormais-des-sommets-totalement-absurdes.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">29/08/2026</span>
+          <h4>Nouvelle hausse à venir en Chine</h4>
+          <p>De nouvelles augmentations tarifaires se profilent sur le marché chinois pour plusieurs références NVIDIA, dont la RTX 5070 chez ASUS.</p>
+          <a href="https://www.cowcotland.com/news/102275/oups-encore-une-augmentation-a-venir-en-chine-pour-les-cartes-graphiques.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">28/08/2026</span>
+          <h4>Les ventes de GPU repartent malgré la flambée</h4>
+          <p>Chez le revendeur allemand MindFactory, les ventes de cartes graphiques progressent en août malgré des prix en hausse, portées par un effet de panique des acheteurs.</p>
+          <a href="https://hardwareand.co/actualites/breves/la-peur-du-pire-fait-vendre-plus-de-gpu-en-aout-2026-chez-mindfactory" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">22/08/2026</span>
+          <h4>GPU Apocalypse : la hausse repart de plus belle</h4>
+          <p>Le relevé hebdomadaire des prix montre de fortes hausses en seulement sept jours côté AMD, tandis que le très haut de gamme NVIDIA poursuit son ascension.</p>
+          <a href="https://www.cowcotland.com/news/102132/gpu-apocalypse-la-catastrophe-est-de-retour-sur-les-prix-des-cartes-graphiques.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">18/08/2026</span>
+          <h4>75,5 millions de GPU livrés au T2 2026</h4>
+          <p>Le rapport Jon Peddie Research confirme une hausse de 12,2 % des cartes dédiées, portée surtout par le PC portable, en pleine flambée des prix.</p>
+          <a href="https://www.materiel-gamer.com/755-millions-de-gpu-livres-au-deuxieme-trimestre-2026-et-122-de-cartes-dediees-en-pleine-flambee-des-prix-le-rapport-jon-peddie-que-tout-le-monde-cite-dit-surtout-que-le-pc-portable-a-fait-tout/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">18/08/2026</span>
+          <h4>Un mois d'août qui fait mal en France</h4>
+          <p>Un relevé de prix chez un revendeur français confirme la hausse des GeForce RTX 50, amorcée fin juillet côté NVIDIA puis début août côté AMD.</p>
+          <a href="https://hardwareand.co/actualites/breves/hausse-des-prix-des-cartes-graphiques-en-france-un-mois-daout-2026-qui-fait-mal-tres-mal" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">28/07/2026</span>
+          <h4>NVIDIA annonce +20 à 30 % sur toute sa gamme</h4>
+          <p>NVIDIA prévient ses partenaires d'une troisième révision tarifaire de l'année ; AMD suit avec une hausse de 10 à 15 % sur les Radeon RX 9000.</p>
+          <a href="https://hylae.shop/hausse-prix-cartes-graphiques-2026/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">26/07/2026</span>
+          <h4>La RTX 60 repoussée à 2027-2028 ?</h4>
+          <p>Selon plusieurs sources, NVIDIA renoncerait à toute nouvelle carte grand public en 2026, au profit de la production d'accélérateurs dédiés à l'IA.</p>
+          <a href="https://www.szwecent.com/fr/will-nvidia-skip-2026-gaming-gpus-and-delay-rtx-60-series-to-2028/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">04/07/2026</span>
+          <h4>RTX 5090 : le cap des 4000 € franchi</h4>
+          <p>Le suivi hebdomadaire des prix confirme la tendance haussière généralisée sur le marché français des cartes graphiques.</p>
+          <a href="https://www.cowcotland.com/news/101547/rtx-5090-a-plus-de-4000-euros-la-folie-des-prix-continue.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">24/06/2026</span>
+          <h4>Prix de la RAM : +171 % en un an</h4>
+          <p>Le prix de la mémoire vive atteint des sommets inédits, une flambée qui se répercute désormais aussi sur le coût des cartes graphiques.</p>
+          <a href="https://tech-insider.org/fr/prix-ram-2026-penurie-gaming/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">04/06/2026</span>
+          <h4>Nvidia à 90 % de part de marché GPU</h4>
+          <p>D'après Jon Peddie Research, NVIDIA capte environ 90 % du marché des GPU dédiés au premier trimestre 2026, contre à peine 8 % pour AMD et 1 % pour Intel.</p>
+          <a href="https://tech-insider.org/fr/nvidia-amd-parts-marche-gpu-2026/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">03/06/2026</span>
+          <h4>Computex 2026 : Le futur des technologies d'affichage</h4>
+          <p>Les constructeurs profitent du salon mondial pour dévoiler de nouveaux algorithmes de mise à l'échelle (Upscaling) boostés par l'IA.</p>
+          <a href="https://www.jeuxvideo.com/high-tech/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">22/05/2026</span>
+          <h4>Nvidia prépare le rafraîchissement "Super"</h4>
+          <p>Des rumeurs insistantes évoquent déjà des déclinaisons améliorées pour la série RTX 5000 d'ici la fin de l'année.</p>
+          <a href="https://www.ginjfo.com/actualites/composants/cartes-graphiques" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">15/05/2026</span>
+          <h4>La RTX 5090 vers les 6000 € ?</h4>
+          <p>Plusieurs fabricants comme Gigabyte et Zotac auraient de nouveau relevé leurs tarifs, rapprochant les modèles les plus premium de la RTX 5090 de la barre des 6 000 euros.</p>
+          <a href="https://www.hardwarecooking.fr/geforce-rtx-5090-depasser-6000-euros/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">05/05/2026</span>
+          <h4>Baisse progressive des prix des GPU</h4>
+          <p>Après des mois de hausses consécutives, le marché montre des signes de stabilisation sur les architectures plus anciennes.</p>
+          <a href="https://www.cowcotland.com/news/cartes-graphiques/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">21/04/2026</span>
+          <h4>Micron lance sa GDDR7 de 3 Go</h4>
+          <p>Micron dévoile ses nouvelles puces mémoire GDDR7 de 3 Go, une étape suivie de près alors que la disponibilité de la mémoire graphique reste sous tension.</p>
+          <a href="https://overclocking.com/la-rtx-5090-continue-de-monter-en-prix/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">18/04/2026</span>
+          <h4>L'IA générative locale sature les GPU</h4>
+          <p>L'utilisation de modèles d'IA à domicile pousse les utilisateurs à privilégier les cartes graphiques dotées de plus de 16 Go de VRAM.</p>
+          <a href="https://www.comptoir-hardware.com/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">29/03/2026</span>
+          <h4>Intel Battlemage : Premiers benchmarks</h4>
+          <p>Les cartes graphiques Intel Arc de seconde génération affichent un rapport performances/prix agressif face à la concurrence.</p>
+          <a href="https://hardwareand.co/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">15/03/2026</span>
+          <h4>Lancement de la gamme AMD RDNA 4</h4>
+          <p>AMD mise sur le segment milieu de gamme performant avec des technologies de Ray Tracing largement améliorées.</p>
+          <a href="https://videocardz.com/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">28/02/2026</span>
+          <h4>Pénurie globale de puces GDDR7</h4>
+          <p>Les chaînes de production de Samsung et SK Hynix peinent à suivre la cadence de fabrication des nouvelles mémoires vidéo.</p>
+          <a href="https://www.tomshardware.fr/actualites/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">18/02/2026</span>
+          <h4>Les prix des GPU bondissent jusqu'à 21,5 %</h4>
+          <p>Une analyse relayée en France montre des hausses de prix pouvant atteindre 21,5 % sur certains modèles, la RTX 5090, la RTX 5080 et la RTX 5070 Ti étant les plus touchées.</p>
+          <a href="https://www.omgpu.com/prix-des-gpu-en-hausse-de-pres-de-15-les-geforce-rtx-5090-5080-et-5070-ti-en-tete/" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">12/02/2026</span>
+          <h4>Annonce officielle de la RTX 5060</h4>
+          <p>Nvidia dévoile enfin sa carte grand public basée sur l'architecture Blackwell, avec une forte emphase sur le DLSS 4.</p>
+          <a href="https://www.lesnumeriques.com/carte-graphique.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">16/01/2026</span>
+          <h4>La RTX 5090 pourrait dépasser les 4200 €</h4>
+          <p>Des sources industrielles évoquent un possible dépassement des 4 200 € pour la RTX 5090 en 2026, la mémoire représentant désormais jusqu'à 80 % du coût de fabrication d'un GPU.</p>
+          <a href="https://www.jeuxvideo.com/news/2056747/le-prix-de-la-rtx-5090-depassera-les-4200-en-2026-les-sources-industrielles-de-cette-agence-de-presse-sont-formelles.htm" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
@@ -118,7 +381,7 @@
         <div class="veille-card">
           <span class="date-badge">04/01/2026</span>
           <h4>Pénurie de RTX 5070 : ventes rationnées</h4>
-          <p>Des revendeurs européens limitent la vente des RTX 5070 et modèles supérieurs en raison d’une forte pénurie.</p>
+          <p>Des revendeurs européens limitent la vente des RTX 5070 et modèles supérieurs en raison d'une forte pénurie.</p>
           <a href="https://www.tomshardware.com/pc-components/gpus/german-retail-supplier-allegedly-rationing-rtx-5070-gpus-more-powerful-nvidia-graphics-cards-are-completely-out-of-stock" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
@@ -136,7 +399,7 @@
         <div class="veille-card">
           <span class="date-badge">03/01/2026</span>
           <h4>Steam dévoile les GPU de fin 2025</h4>
-          <p>L’enquête Steam de décembre 2025 confirme la domination des cartes graphiques Nvidia chez les joueurs PC.</p>
+          <p>L'enquête Steam de décembre 2025 confirme la domination des cartes graphiques Nvidia chez les joueurs PC.</p>
           <a href="https://vgtimes.com/news/143298-steam-reveals-the-most-popular-gpu-for-december-2025.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
@@ -163,7 +426,7 @@
         <div class="veille-card">
           <span class="date-badge">02/01/2026</span>
           <h4>Les meilleures cartes en janvier 2026</h4>
-          <p>Les Numériques propose un guide d’achat des GPU les plus performants pour le gaming.</p>
+          <p>Les Numériques propose un guide d'achat des GPU les plus performants pour le gaming.</p>
           <a href="https://www.lesnumeriques.com/carte-graphique/guide-achat-quelles-sont-les-meilleures-cartes-graphiques-g146375.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
@@ -172,7 +435,7 @@
         <div class="veille-card">
           <span class="date-badge">31/12/2025</span>
           <h4>RTX 5090 Lightning : records pré-lancement</h4>
-          <p>La future RTX 5090 Lightning impressionne avec des records d’overclocking avant sa sortie.</p>
+          <p>La future RTX 5090 Lightning impressionne avec des records d'overclocking avant sa sortie.</p>
           <a href="https://www.tomshardware.com/pc-components/gpus/msis-rtx-5090-lightning-shatters-gpu-records-before-launch-40-phase-vram-and-dual-12v-2x6-connectors-turn-heads-on-upcoming-overclocking-monster" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
@@ -183,6 +446,15 @@
           <h4>Crise VRAM : Hausse des prix</h4>
           <p>Le coût de la mémoire GDDR7 explose, entraînant une hausse de plus de 150$ sur certains modèles.</p>
           <a href="https://www.tomshardware.com/pc-components/gpus/german-retail-supplier-allegedly-rationing-rtx-5070-gpus-more-powerful-nvidia-graphics-cards-are-completely-out-of-stock" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">15/12/2025</span>
+          <h4>RAM, SSD, HDD : trois mois de flambée chiffrés</h4>
+          <p>Une étude sur trois mois révèle une hausse moyenne de plus de 250 % sur les kits de RAM, mais aussi une progression notable des prix des SSD et des disques durs.</p>
+          <a href="https://www.comptoir-hardware.com/actus/ram/48439-ram-ssd-hdd-trois-mois-de-flambee-des-prix-chiffres-en-euros.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
@@ -201,6 +473,15 @@
           <h4>Logiciel AMD Adrenalin 2026</h4>
           <p>Nouvelles fonctionnalités d'IA générative pour le FidelityFX Super Resolution.</p>
           <a href="https://www.comptoir-hardware.com/actus/cartes-graphiques.html" target="_blank" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">10/12/2025</span>
+          <h4>Micron ferme Crucial, sa marque grand public</h4>
+          <p>Après 29 ans d'existence, Micron annonce l'arrêt de Crucial pour se recentrer sur les clients professionnels et l'IA, un signal fort de la crise mémoire.</p>
+          <a href="https://dropreference.com/fr/blog/news/ram-plus-chere-carte-graphique-2026-crise-memoire" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
@@ -257,79 +538,109 @@
           <a href="https://www.ginjfo.com/actualites/composants/cartes-graphiques/cartes-graphiques-les-fabricants-alertent-sur-une-hausse-massive-de-prix-20251120" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
+
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
-          <span class="date-badge">12/02/2026</span>
-          <h4>Annonce officielle de la RTX 5060</h4>
-          <p>Nvidia dévoile enfin sa carte grand public basée sur l'architecture Blackwell, avec une forte emphase sur le DLSS 4.</p>
-          <a href="https://www.lesnumeriques.com/carte-graphique.html" target="_blank" class="btn-veille">Lire l'article</a>
+          <span class="date-badge">06/11/2025</span>
+          <h4>DDR5 : +30 % de hausse en une semaine</h4>
+          <p>Selon TrendForce, les puces DDR5 bondissent de plus de 30 % en une seule semaine, une flambée en partie liée au renouvellement de parcs informatiques après la fin du support de Windows 10.</p>
+          <a href="https://www.alexisleglise-informatique.fr/blog/blog-actualites-1/les-prix-des-composants-informatiques-explosent-42" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
-          <span class="date-badge">28/02/2026</span>
-          <h4>Pénurie globale de puces GDDR7</h4>
-          <p>Les chaînes de production de Samsung et SK Hynix peinent à suivre la cadence de fabrication des nouvelles mémoires vidéo.</p>
-          <a href="https://www.tomshardware.fr/actualites/" target="_blank" class="btn-veille">Lire l'article</a>
+          <span class="date-badge">04/11/2025</span>
+          <h4>MINISFORUM officialise une hausse générale</h4>
+          <p>MINISFORUM devient le premier fabricant à officialiser une hausse généralisée de ses tarifs sur les produits intégrant de la DDR5, un signal avant-coureur pour le reste du secteur.</p>
+          <a href="https://pausehardware.com/penurie-ram-ddr5-2025-guide-complet/" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
-          <span class="date-badge">15/03/2026</span>
-          <h4>Lancement de la gamme AMD RDNA 4</h4>
-          <p>AMD mise sur le segment milieu de gamme performant avec des technologies de Ray Tracing largement améliorées.</p>
-          <a href="https://videocardz.com/" target="_blank" class="btn-veille">Lire l'article</a>
+          <span class="date-badge">06/10/2025</span>
+          <h4>Le point de bascule de la crise mémoire</h4>
+          <p>Après des mois de stabilité, les prix de la RAM DDR5 s'envolent brutalement et simultanément dans toutes les zones géographiques, marquant le début de la crise mémoire qui touchera bientôt les cartes graphiques.</p>
+          <a href="https://dropreference.com/fr/blog/news/penurie-ram-ddr5-2026" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
-          <span class="date-badge">29/03/2026</span>
-          <h4>Intel Battlemage : Premiers benchmarks</h4>
-          <p>Les cartes graphiques Intel Arc de seconde génération affichent un rapport performances/prix agressif face à la concurrence.</p>
-          <a href="https://hardwareand.co/" target="_blank" class="btn-veille">Lire l'article</a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="veille-card">
-          <span class="date-badge">18/04/2026</span>
-          <h4>L'IA générative locale sature les GPU</h4>
-          <p>L'utilisation de modèles d'IA à domicile pousse les utilisateurs à privilégier les cartes graphiques dotées de plus de 16 Go de VRAM.</p>
-          <a href="https://www.comptoir-hardware.com/" target="_blank" class="btn-veille">Lire l'article</a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="veille-card">
-          <span class="date-badge">05/05/2026</span>
-          <h4>Baisse progressive des prix des GPU</h4>
-          <p>Après des mois de hausses consécutives, le marché montre des signes de stabilisation sur les architectures plus anciennes.</p>
-          <a href="https://www.cowcotland.com/news/cartes-graphiques/" target="_blank" class="btn-veille">Lire l'article</a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="veille-card">
-          <span class="date-badge">22/05/2026</span>
-          <h4>Nvidia prépare le rafraîchissement "Super"</h4>
-          <p>Des rumeurs insistantes évoquent déjà des déclinaisons améliorées pour la série RTX 5000 d'ici la fin de l'année.</p>
-          <a href="https://www.ginjfo.com/actualites/composants/cartes-graphiques" target="_blank" class="btn-veille">Lire l'article</a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="veille-card">
-          <span class="date-badge">03/06/2026</span>
-          <h4>Computex 2026 : Le futur des technologies d'affichage</h4>
-          <p>Les constructeurs profitent du salon mondial pour dévoiler de nouveaux algorithmes de mise à l'échelle (Upscaling) boostés par l'IA.</p>
-          <a href="https://www.jeuxvideo.com/high-tech/" target="_blank" class="btn-veille">Lire l'article</a>
+          <span class="date-badge">03/09/2025</span>
+          <h4>Nvidia écrase la concurrence sur les GPU dédiés</h4>
+          <p>Selon le cabinet Jon Peddie Research, NVIDIA atteint 94 % de part de marché des GPU dédiés au deuxième trimestre 2025, un niveau record face à AMD et Intel.</p>
+          <a href="https://comptoir-hardware.com/actus/cartes-graphiques/48277-nvidia-annihile-la-concurrence-sur-le-marche-des-cartes-graphiques-dediees-en-2025.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
       </div>
 
     </div>
   </main>
+
+  <section class="meta-section">
+    <div class="container">
+      <h2 class="section-title">Méthodologie &amp; outils de veille</h2>
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="meta-card">
+            <h5><i class="bi bi-tools"></i> Outils utilisés</h5>
+            <ul>
+              <li>Recherche web (moteur de recherche + assistant IA) pour l'identification et la vérification des articles</li>
+              <li>Lecture directe des pages sources pour confirmer date, contenu et fiabilité</li>
+              <li>Tri chronologique manuel des résultats collectés</li>
+              <li>Page HTML / Bootstrap 5 pour la mise en forme du flux</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="meta-card">
+            <h5><i class="bi bi-sliders"></i> Paramètres de recherche</h5>
+            <ul>
+              <li>Période couverte : septembre 2025 → septembre 2026</li>
+              <li>Langue : francophone (résultats anglophones repris et traduits si pertinents)</li>
+              <li>Zone : marché européen / français en priorité</li>
+              <li>Fréquence de mise à jour : ponctuelle, au fil des recherches</li>
+              <li>Tri d'affichage : chronologique décroissant (du plus récent au plus ancien)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="meta-card">
+            <h5><i class="bi bi-tags"></i> Mots-clés surveillés</h5>
+            <div>
+              <span class="tag-pill">carte graphique</span>
+              <span class="tag-pill">GPU</span>
+              <span class="tag-pill">Nvidia RTX</span>
+              <span class="tag-pill">AMD Radeon</span>
+              <span class="tag-pill">Intel Arc</span>
+              <span class="tag-pill">pénurie mémoire</span>
+              <span class="tag-pill">GDDR7</span>
+              <span class="tag-pill">DDR5</span>
+              <span class="tag-pill">prix GPU</span>
+              <span class="tag-pill">part de marché</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="meta-card">
+            <h5><i class="bi bi-newspaper"></i> Sources surveillées</h5>
+            <ul>
+              <li>Tom's Hardware (FR/EN), Cowcotland, HardwareAndCo</li>
+              <li>Comptoir du Hardware, GinjFo, JVTech (Jeuxvideo.com)</li>
+              <li>VideoCardz, Les Numériques, OverClocking.com</li>
+              <li>Tech-Insider, PauseHardware, DropReference, Materiel-Gamer</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
