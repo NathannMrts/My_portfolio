@@ -3,148 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030304">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>Veille Technologique - Cartes Graphiques</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0e1c;
-      color: #e6e6e6;
-    }
-    .hero {
-      background: linear-gradient(135deg, #1a1a2e 0%, #4e54c8 100%);
-      color: white;
-      padding: 100px 0 60px;
-      text-align: center;
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-    .section-title {
-      position: relative;
-      margin-bottom: 40px;
-      font-weight: 700;
-      text-align: center;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -15px;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      border-radius: 2px;
-    }
-    .veille-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .veille-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-      border-color: #8f94fb;
-    }
-    .veille-card h4 {
-      color: #8f94fb;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    .date-badge {
-      font-size: 0.75rem;
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      margin-bottom: 15px;
-      display: inline-block;
-      width: fit-content;
-      font-weight: bold;
-    }
-    .new-badge {
-      font-size: 0.7rem;
-      background: #ff5e78;
-      color: white;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-left: 8px;
-      display: inline-block;
-      width: fit-content;
-      font-weight: bold;
-      vertical-align: middle;
-    }
-    .btn-veille {
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      color: white !important;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s;
-      margin-top: auto;
-      text-align: center;
-      display: block;
-    }
-    .btn-veille:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.5);
-      filter: brightness(1.2);
-    }
-    section { padding: 60px 0; }
-    .meta-section {
-      background: rgba(255, 255, 255, 0.03);
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .meta-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      height: 100%;
-    }
-    .meta-card h5 {
-      color: #8f94fb;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    .meta-card ul {
-      padding-left: 20px;
-      margin-bottom: 0;
-    }
-    .meta-card li {
-      margin-bottom: 8px;
-      color: #cfcfe6;
-    }
-    .tag-pill {
-      display: inline-block;
-      background: rgba(143, 148, 251, 0.15);
-      border: 1px solid rgba(143, 148, 251, 0.4);
-      color: #c7caff;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin: 3px;
-    }
+:root{
+  --primary-color:#f5f5f7;--secondary-color:#d2d3da;--dark-color:#0b0b0d;--darker-color:#030304;--light-color:#f5f5f7;--accent-color:#f5f5f7;
+  --text:#f5f5f7;--muted:#9a9ba5;--silver:#c8c9d2;--line:rgba(255,255,255,.09);--line-hi:rgba(255,255,255,.22);
+  --glass:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+  --ease:cubic-bezier(.22,.8,.2,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:#030304;color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;counter-reset:sec}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 35%,transparent 30%,rgba(0,0,0,.6) 100%),linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45))}
+::selection{background:#f5f5f7;color:#000}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:10px}
+a{color:var(--text)}
+
+/* Fond MacFlow : tubes en relief */
+.bg-macflow{position:fixed;inset:-12% 0;z-index:-2;pointer-events:none;will-change:transform}
+.bg-macflow svg{width:100%;height:100%;display:block}
+
+/* Navigation : capsule flottante */
+.navbar{position:fixed;top:16px;left:50%;right:auto;width:min(1060px,calc(100% - 24px));transform:translateX(-50%);padding:7px 7px 7px 22px;border-radius:999px;
+  background:rgba(18,18,21,.55);border:1px solid var(--line);border-top-color:var(--line-hi);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:0 18px 50px -12px #000,inset 0 1px 0 rgba(255,255,255,.1)}
+.navbar:has(.show){border-radius:28px}
+.navbar>.container{max-width:none;padding:0}
+.navbar-brand{display:flex;align-items:center;font-weight:600;font-size:.95rem;color:var(--text)!important}
+.navbar-brand::before{content:"";width:11px;height:11px;border-radius:50%;background:#e9e9ee;box-shadow:17px 0 0 #7d7e88,34px 0 0 #3b3c43;margin-right:52px}
+.navbar-nav{position:relative}
+.nav-pill{position:absolute;top:0;left:0;height:100%;border-radius:999px;background:rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);transition:transform .45s var(--ease),width .45s var(--ease),opacity .3s;opacity:0;pointer-events:none}
+.nav-link{position:relative;z-index:1;font-size:.84rem;font-weight:500;margin:0;padding:9px 15px!important;border-radius:999px;color:var(--muted)!important;transition:color .25s}
+.nav-link:hover,.nav-link.active{color:#fff!important}
+.navbar-toggler{border:1px solid var(--line);border-radius:999px;padding:7px 11px}
+.navbar-toggler:focus{box-shadow:0 0 0 2px rgba(255,255,255,.4)}
+.navbar-toggler-icon{filter:invert(1)}
+@media(max-width:991px){.nav-pill{display:none}.nav-link{padding:13px 16px!important}.nav-link.active{background:rgba(255,255,255,.1)}.navbar-collapse{padding:8px 4px 10px}}
+
+/* Boutons : pilules */
+.btn{border-radius:999px;font-weight:500;padding:.62rem 1.3rem;letter-spacing:-.01em;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .25s,color .25s}
+.btn-lg{padding:.85rem 1.8rem;font-size:1rem}
+.btn-sm{padding:.4rem 1rem}
+.btn:active{transform:scale(.96)!important}
+.btn-light{background:linear-gradient(#fff,#d9dae0);color:#050506;box-shadow:inset 0 1px 0 #fff,0 10px 30px -8px rgba(255,255,255,.35)}
+.btn-light:hover{color:#000;transform:translateY(-3px);box-shadow:inset 0 1px 0 #fff,0 18px 40px -8px rgba(255,255,255,.5)}
+.btn-outline-light,.btn-outline-primary{color:var(--text);background:var(--glass);border-color:var(--line-hi);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.btn-outline-light:hover,.btn-outline-primary:hover,.btn-outline-primary:focus{color:#000;background:#f5f5f7;border-color:#f5f5f7;transform:translateY(-3px)}
+.btn-outline-light[style]{border-color:var(--line-hi)!important;color:var(--muted)!important}
+
+/* Menu "Plus" */
+.dropdown-menu{background:rgba(18,18,21,.86);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid var(--line-hi);border-radius:18px;padding:8px;margin-top:14px!important;box-shadow:0 24px 60px -12px #000}
+.dropdown-item{color:var(--silver);border-radius:10px;padding:9px 14px;font-size:.86rem}
+.dropdown-item:hover,.dropdown-item:focus,.dropdown-item.active{background:rgba(255,255,255,.1);color:#fff}
+@media(max-width:991px){.dropdown-menu{background:transparent;border:0;box-shadow:none;margin-top:0!important}}
+
+/* Recherche façon Spotlight (comptes rendus) */
+.spot{position:relative;max-width:520px;margin:0 0 22px}
+.spot i{position:absolute;left:19px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.spot input{width:100%;padding:14px 20px 14px 48px;border-radius:999px;color:var(--text);font:inherit;font-size:.96rem;background:var(--glass);border:1px solid var(--line-hi);backdrop-filter:blur(20px);outline:0;transition:box-shadow .25s,border-color .25s}
+.spot input::placeholder{color:var(--muted)}
+.spot input:focus{border-color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+.spot-empty{color:var(--muted);margin:16px 6px 0}
+.search-hidden{display:none!important}
+
+.back-to-top{position:fixed;bottom:22px;right:20px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;background:rgba(18,18,21,.6);border:1px solid var(--line-hi);backdrop-filter:blur(20px);color:#fff;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .35s var(--ease),background .25s,color .25s;z-index:1000}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:none}.back-to-top:hover{background:#fff;color:#000}
+
+/* Révélations */
+.reveal{opacity:0;transform:translateY(34px) scale(.985);filter:blur(6px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0s)}
+.reveal.is-in{opacity:1;transform:none;filter:none}
+.animate{animation:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .reveal{opacity:1;transform:none;filter:none}.bg-macflow{transform:none!important}
+}
+
+/* ===== Page Veille ===== */
+.navbar:has(.show){border-radius:999px}.navbar:has(.navbar-collapse.show){border-radius:28px}
+.hero{background:transparent;clip-path:none;text-align:left;padding:150px 0 40px}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.055em;line-height:.95;margin-bottom:22px!important;background:linear-gradient(180deg,#fff 20%,#7c7d88 110%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .lead{font-size:clamp(1.05rem,1.8vw,1.35rem);color:#b4b5be;margin-bottom:22px!important}
+.hero p.small{display:inline-block;padding:9px 18px;border-radius:999px;color:var(--silver);font-size:.82rem!important;background:var(--glass);border:1px solid var(--line);border-top-color:var(--line-hi);backdrop-filter:blur(16px)}
+main.container{padding-top:40px!important}
+.section-title{display:flex;align-items:center;gap:16px;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-.035em;line-height:1.05;margin-bottom:30px;color:var(--text)}
+.section-title::after{content:none}
+.title-icon{flex-shrink:0;display:grid;place-items:center;width:48px;height:48px;border-radius:15px;font-size:1.3rem;line-height:1;color:#fff;background:linear-gradient(160deg,rgba(255,255,255,.24),rgba(255,255,255,.04));border:1px solid var(--line-hi);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 28px -8px #000}
+.meta-section .section-title{font-size:clamp(1.5rem,3vw,2rem);color:var(--silver)}
+.meta-section .title-icon{width:40px;height:40px;font-size:1.1rem;border-radius:12px}
+.spot{margin-bottom:30px}
+.veille-card,.meta-card{background:var(--glass);border:1px solid var(--line);border-top-color:var(--line-hi);border-radius:28px;backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 40px 80px -30px #000}
+.veille-card{position:relative;isolation:isolate;padding:26px;margin-bottom:0;height:100%;display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .5s}
+.veille-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.12),transparent 50%)}
+.veille-card:hover{transform:translateY(-8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 50px 90px -30px #000}
+.veille-card:hover::after{opacity:1}
+.veille-card>*{position:relative;z-index:1}
+.veille-card h4{color:var(--text);font-size:1.1rem;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px}
+.veille-card p{color:var(--muted);line-height:1.65}
+.date-badge{display:inline-flex;align-items:center;gap:7px;width:fit-content;margin-bottom:16px;padding:6px 14px;border-radius:999px;font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--silver);background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.new-badge{display:inline-block;margin-left:8px;padding:3px 10px;border-radius:999px;font-size:.66rem;font-weight:700;letter-spacing:.08em;color:#050506;background:#f5f5f7;vertical-align:middle;-webkit-text-fill-color:#050506}
+.btn-veille{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:.65rem 1.3rem;border-radius:999px;font-size:.9rem;font-weight:500;text-decoration:none;color:var(--text)!important;background:var(--glass);border:1px solid var(--line-hi);box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:transform .35s var(--ease),background .25s,color .25s}
+.btn-veille:hover{background:#f5f5f7;color:#000!important;transform:translateY(-3px);filter:none;box-shadow:none}
+.btn-veille:active{transform:scale(.97)}
+.veille-card p+.btn-veille{margin-top:auto}
+.meta-section{background:transparent;border-top:1px solid var(--line);padding:80px 0}
+.meta-card{padding:30px}
+.meta-card h5{color:var(--text);font-weight:700;letter-spacing:-.02em;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.meta-card li{color:var(--muted);margin-bottom:8px;line-height:1.6}
+.tag-pill{display:inline-block;margin:3px;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:500;color:var(--text);background:rgba(255,255,255,.07);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.reveal{filter:none;transform:translateY(18px)}
+@media(max-width:768px){.hero{padding:120px 0 30px}.meta-section{padding:60px 0}.veille-card,.meta-card{padding:22px}}
+
+/* Icônes intégrées */
+@font-face{font-family:"bi-embedded";src:url(data:font/woff2;base64,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) format("woff2");font-display:block}
+.bi::before,[class^="bi-"]::before,[class*=" bi-"]::before{display:inline-block;font-family:"bi-embedded","bootstrap-icons"!important;font-style:normal;font-weight:400!important;font-variant:normal;text-transform:none;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased}
+.bi-arrow-up::before{content:"\f148"}
+.bi-arrow-up-right::before{content:"\f144"}
+.bi-briefcase::before{content:"\f1cc"}
+.bi-building::before{content:"\f87d"}
+.bi-buildings::before{content:"\f87d"}
+.bi-calendar-event::before{content:"\f1e8"}
+.bi-chat-dots::before{content:"\f24a"}
+.bi-journal-text::before{content:"\f444"}
+.bi-mortarboard::before{content:"\f6fe"}
+.bi-newspaper::before{content:"\f4a3"}
+.bi-person::before{content:"\f4e1"}
+.bi-search::before{content:"\f52a"}
+.bi-sliders::before{content:"\f56b"}
+.bi-stars::before{content:"\f589"}
+.bi-tags::before{content:"\f5b2"}
+.bi-tools::before{content:"\f5db"}
+/* fin icônes intégrées */
   </style>
 </head>
 <body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="Index.html">Nathan Martins</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="Index.html#home">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="Index.html#stage">Stage</a></li>
+          <li class="nav-item"><a class="nav-link" href="Index.html#comptes-rendus">Comptes Rendus</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Veille.html" aria-current="page">Veille Techno</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Plus</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="Index.html#about">À propos</a></li>
+              <li><a class="dropdown-item" href="Index.html#skills">Compétences</a></li>
+              <li><a class="dropdown-item" href="Index.html#experience">Expériences</a></li>
+              <li><a class="dropdown-item" href="Index.html#parcours">Mon Parcours</a></li>
+              <li><a class="dropdown-item" href="Index.html#social">Réseaux</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 
   <header class="hero">
     <div class="container">
       <h1 class="display-4 fw-bold">Veille Technologique</h1>
       <p class="lead">Accès direct aux sources et analyses GPU</p>
-      <p class="small mb-0" style="opacity:0.85;">Flux trié par date (du plus récent au plus ancien) — septembre 2025 à septembre 2026</p>
+      <p class="small mb-0" style="opacity:0.85;">Flux trié par date (du plus récent au plus ancien) — septembre 2025 à novembre 2026</p>
     </div>
   </header>
 
@@ -154,8 +184,89 @@
 
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
+          <span class="date-badge">25/11/2026</span>
+          <h4>RTX 50 : NVIDIA réduirait encore ses livraisons, les RTX 60 pourraient attendre 2028<span class="new-badge">NOUVEAU</span></h4>
+          <p>NVIDIA aurait prévenu ses partenaires d'une nouvelle baisse de 20 à 30 % des livraisons de GPU gaming entre novembre 2026 et janvier 2027, d'après un forum de distribution chinois (l'information concerne pour l'instant la Chine). La demande en IA pourrait aussi repousser les futures RTX 60 au-delà de 2027.</p>
+          <a href="https://pausehardware.com/rtx-50-baisse-livraisons-retard-rtx-60/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">25/11/2026</span>
+          <h4>RTX 5070 : le prix plancher grimpe de 44 % au Japon<span class="new-badge">NOUVEAU</span></h4>
+          <p>Au Japon, l'offre la moins chère de RTX 5070 passe de 103 800 à 149 800 yens en quatre mois. Les relevés américains et allemands montrent une tension comparable, avec des premiers prix proches de 900 dollars aux États-Unis et de 849 € en Allemagne.</p>
+          <a href="https://pausehardware.com/rtx-5070-hausse-prix-japon-quatre-mois/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">25/11/2026</span>
+          <h4>RT-MLAS : AMD optimise le ray tracing pour les mondes ouverts<span class="new-badge">NOUVEAU</span></h4>
+          <p>AMD présente RT-MLAS, une réorganisation du ray tracing pensée pour les grands mondes ouverts remplis d'objets animés. Dans la démonstration, plus de 40 000 plantes bougent indépendamment à plus de 60 images par seconde en 1080p sur une Radeon de la série RX 9070.</p>
+          <a href="https://pausehardware.com/rt-mlas-amd-ray-tracing-mondes-ouverts/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">25/11/2026</span>
+          <h4>ASUS XG Station 3 : le dock eGPU arrive en Europe à 349 €<span class="new-badge">NOUVEAU</span></h4>
+          <p>Le dock pour carte graphique externe d'ASUS, compatible Thunderbolt 5, apparaît dans une boutique européenne à 349 €, soit environ 50 € sous le tarif conseillé annoncé.</p>
+          <a href="https://pausehardware.com/asus-xg-station-3-prix-europe/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">24/11/2026</span>
+          <h4>GeForce 621.40 WHQL : NVIDIA corrige les écritures excessives sur les SSD<span class="new-badge">NOUVEAU</span></h4>
+          <p>Un bug du pilote graphique pouvait générer jusqu'à 9 Mo/s d'écritures en arrière-plan, pour un simple fichier de journalisation. Le pilote 621.40 WHQL corrige ce comportement.</p>
+          <a href="https://pausehardware.com/geforce-621-40-correctif-ecritures-ssd/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">24/11/2026</span>
+          <h4>RX 9060 XT : record du monde de fréquence GPU à 4,837 GHz<span class="new-badge">NOUVEAU</span></h4>
+          <p>AMD porte le record mondial de fréquence GPU à 4,837 GHz avec une RX 9060 XT refroidie à l'azote liquide, lors d'une session d'overclocking dans le nouveau magasin Micro Center d'Austin, avec un dirigeant du constructeur aux commandes.</p>
+          <a href="https://pausehardware.com/rx-9060-xt-record-mondial-frequence/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">24/11/2026</span>
+          <h4>Ubuntu 26.10 : l'Arc B390 gagne jusqu'à 65 % dans les tests graphiques<span class="new-badge">NOUVEAU</span></h4>
+          <p>Sur le même PC portable, la puce graphique Intel Arc B390 délivre jusqu'à deux tiers d'images par seconde supplémentaires dans les tests de Phoronix après la mise à jour vers Ubuntu 26.10.</p>
+          <a href="https://pausehardware.com/ubuntu-26-10-intel-arc-b390-performances/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">12/11/2026</span>
+          <h4>AMD : les livraisons de GPU gaming en Chine réduites de 20 à 50 %</h4>
+          <p>Selon une fuite relayée par IT Home et Board Channels, AMD aurait réduit depuis octobre les allocations de GPU destinées à ses partenaires chinois, avec un approvisionnement très tendu jusqu'en janvier 2027. L'information n'est pas confirmée par AMD et ne concerne que la Chine.</p>
+          <a href="https://www.techpowerup.com/354757/amd-reportedly-cuts-gaming-gpu-supply-in-china-by-up-to-50" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
+          <span class="date-badge">03/11/2026</span>
+          <h4>RTX 5090 : les fabricants répercutent jusqu'à 500 € de hausse</h4>
+          <p>Les partenaires de NVIDIA appliquent des hausses de prix pouvant atteindre 500 € sur la GeForce RTX 5090, sous la pression du coût de la mémoire GDDR7 et d'une conception thermique coûteuse à fabriquer.</p>
+          <a href="https://www.linformatique.org/geforce-rtx-5090-hausse-prix-usine-composants/" target="_blank" rel="noopener noreferrer" class="btn-veille">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="veille-card">
           <span class="date-badge">03/09/2026</span>
-          <h4>Bien choisir sa carte graphique en 2026<span class="new-badge">NOUVEAU</span></h4>
+          <h4>Bien choisir sa carte graphique en 2026</h4>
           <p>Un dossier complet passe en revue les gammes NVIDIA, AMD et Intel pour PC fixe et portable, avec un focus sur les technologies d'upscaling par IA (DLSS, FSR, XeSS).</p>
           <a href="https://www.cowcotland.com/articles/5069/carte-graphique-bien-choisir-en-2026-sur-pc-fixe-comme-sur-pc-portable.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
@@ -164,7 +275,7 @@
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="veille-card">
           <span class="date-badge">02/09/2026</span>
-          <h4>+15 % en un mois : la RTX 5090 explose<span class="new-badge">NOUVEAU</span></h4>
+          <h4>+15 % en un mois : la RTX 5090 explose</h4>
           <p>Une nouvelle hausse mensuelle pousse la RTX 5090 vers des tarifs jugés totalement déraisonnables, certains modèles dépassant les 4 800 € en France.</p>
           <a href="https://www.cowcotland.com/news/102254/prix-des-cartes-graphiques-+-15-en-un-mois-la-rtx-5090-atteint-desormais-des-sommets-totalement-absurdes.html" target="_blank" class="btn-veille">Lire l'article</a>
         </div>
@@ -599,7 +710,7 @@
           <div class="meta-card">
             <h5><i class="bi bi-sliders"></i> Paramètres de recherche</h5>
             <ul>
-              <li>Période couverte : septembre 2025 → septembre 2026</li>
+              <li>Période couverte : septembre 2025 → novembre 2026</li>
               <li>Langue : francophone (résultats anglophones repris et traduits si pertinents)</li>
               <li>Zone : marché européen / français en priorité</li>
               <li>Fréquence de mise à jour : ponctuelle, au fil des recherches</li>
@@ -642,5 +753,120 @@
     </div>
   </section>
 
+  <div class="back-to-top" id="backToTop"><i class="bi bi-arrow-up"></i></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+        const backToTopButton = document.getElementById('backToTop');
+        backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // ---- Fond MacFlow : tubes en relief (SVG généré, décoratif) ----
+            const W = 150;
+            const tubes = [
+                'M140 1400V760A300 300 0 0 1 440 460H1080',
+                'M360 1400V760A80 80 0 0 1 440 680H1080',
+                'M700 920H2200', 'M700 1160H2200',
+                'M640 90H2200', 'M-300 90H280',
+                'M1560 380V520A160 160 0 0 0 1720 680H2200'
+            ];
+            const layer = (attrs) => '<g fill="none" stroke-linecap="round" stroke-linejoin="round" ' + attrs + '>' +
+                tubes.map(d => '<path d="' + d + '"/>').join('') + '</g>';
+            const bg = document.createElement('div');
+            bg.className = 'bg-macflow';
+            bg.setAttribute('aria-hidden', 'true');
+            bg.innerHTML =
+                '<svg viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
+                '<defs>' +
+                '<linearGradient id="rim" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1920" y2="1200"><stop offset="0" stop-color="#c4c6d2"/><stop offset=".5" stop-color="#6a6c78"/><stop offset="1" stop-color="#34353c"/></linearGradient>' +
+                '<filter id="b30" filterUnits="userSpaceOnUse" x="-400" y="-400" width="3000" height="2200"><feGaussianBlur stdDeviation="30"/></filter>' +
+                '<filter id="b26" filterUnits="userSpaceOnUse" x="-400" y="-400" width="3000" height="2200"><feGaussianBlur stdDeviation="26"/></filter>' +
+                '</defs><rect width="1920" height="1200" fill="#030304"/>' +
+                layer('stroke="rgba(150,153,172,.30)" stroke-width="' + (W + 110) + '" filter="url(#b30)"') +
+                layer('stroke="url(#rim)" stroke-width="' + (W + 2) + '"') +
+                layer('stroke="#1b1c21" stroke-width="' + W + '"') +
+                layer('stroke="#030304" stroke-width="' + (W - 70) + '" filter="url(#b26)"') +
+                '</svg>';
+            document.body.prepend(bg);
+
+            // Scroll : parallaxe du fond et bouton retour (un seul listener, rAF)
+            let ticking = false;
+            function onScroll() {
+                const y = window.pageYOffset;
+                if (!reduce) bg.style.transform = 'translate3d(0,' + (-y * 0.06).toFixed(1) + 'px,0)';
+                backToTopButton.classList.toggle('show', y > 300);
+                ticking = false;
+            }
+            window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+            onScroll();
+
+            // Icônes : titres, menu « Plus », dates et boutons
+            const sectionIcons = { about: 'person', skills: 'stars', experience: 'briefcase', parcours: 'mortarboard', stage: 'building', 'comptes-rendus': 'journal-text', social: 'chat-dots' };
+            const titleIcons = ['newspaper', 'sliders'];
+            document.querySelectorAll('.section-title').forEach((t, i) =>
+                t.insertAdjacentHTML('afterbegin', '<i class="title-icon bi bi-' + titleIcons[i] + '" aria-hidden="true"></i>'));
+            const list = document.querySelector('.navbar-nav');
+            const links = [...list.querySelectorAll('.nav-link')];
+            const subs = [...list.querySelectorAll('.dropdown-item')];
+            subs.forEach(a => {
+                const ic = sectionIcons[(a.getAttribute('href') || '').split('#')[1]];
+                if (ic) a.insertAdjacentHTML('afterbegin', '<i class="bi bi-' + ic + '" aria-hidden="true"></i>');
+            });
+            document.querySelectorAll('.date-badge').forEach(b => b.insertAdjacentHTML('afterbegin', '<i class="bi bi-calendar-event" aria-hidden="true"></i>'));
+            document.querySelectorAll('.btn-veille').forEach(b => b.insertAdjacentHTML('beforeend', '<i class="bi bi-arrow-up-right" aria-hidden="true"></i>'));
+
+            // Capsule coulissante sous la page active
+            const pill = document.createElement('span');
+            pill.className = 'nav-pill';
+            list.prepend(pill);
+            const active = list.querySelector('.nav-link.active');
+            function movePill() {
+                if (!active || getComputedStyle(pill).display === 'none') return;
+                const r = active.getBoundingClientRect(), p = list.getBoundingClientRect();
+                pill.style.width = r.width + 'px';
+                pill.style.transform = 'translateX(' + (r.left - p.left) + 'px)';
+                pill.style.opacity = 1;
+            }
+            movePill();
+            window.addEventListener('resize', movePill);
+            const collapseEl = document.getElementById('navbarNav');
+            [...links.filter(l => !l.classList.contains('dropdown-toggle')), ...subs].forEach(l => l.addEventListener('click', () => {
+                if (collapseEl.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
+            }));
+
+            // Recherche dans le flux
+            const grid = document.querySelector('main .row');
+            const cols = [...grid.children];
+            const box = document.createElement('div');
+            box.className = 'spot';
+            box.innerHTML = '<i class="bi bi-search" aria-hidden="true"></i><input type="search" placeholder="Rechercher un article…" aria-label="Rechercher un article">';
+            grid.before(box);
+            const empty = document.createElement('p');
+            empty.className = 'spot-empty'; empty.hidden = true; empty.textContent = 'Aucun résultat.';
+            grid.after(empty);
+            box.querySelector('input').addEventListener('input', e => {
+                const q = e.target.value.trim().toLowerCase();
+                let n = 0;
+                cols.forEach(c => { const ok = !q || c.textContent.toLowerCase().includes(q); c.classList.toggle('search-hidden', !ok); if (ok) n++; });
+                empty.hidden = n > 0;
+            });
+
+            // Apparitions progressives et lumière au survol
+            const targets = document.querySelectorAll('.hero .container > *, .section-title, .spot, .veille-card, .meta-card');
+            if (!reduce && 'IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+                }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+                targets.forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--d', ((i % 3) * 0.07) + 's'); io.observe(el); });
+                document.querySelectorAll('.veille-card').forEach(c => c.addEventListener('pointermove', e => {
+                    const r = c.getBoundingClientRect();
+                    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+                    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+                }, { passive: true }));
+            }
+        });
+  </script>
 </body>
 </html>
